@@ -10,13 +10,11 @@
         position: fixed;
         top: 50%;
         left: 50%;
-        /* min-width: 100%;
-        min-height: 100%; */
         transform: translate(-50%, -50%);
         }
 
         #container {
-        height: 600vh;
+        height: 1000vh;
         }
     </style>
 </head>
@@ -25,7 +23,7 @@
 
     <div id="container">
 
-        <video src="e.mp4" playsinline="true" webkit-playsinline="true" preload="metadata" muted="muted" class="video-background"></video>
+        <video src="k.mp4" playsinline="true" webkit-playsinline="true" preload="metadata" muted="muted" class="video-background"></video>
     </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"></script>
@@ -35,7 +33,7 @@
 // console.clear();
 
 const video = document.querySelector(".video-background");
-let src = video.currentSrc || video.src;
+let src = video.src;
 
 function once(el, event, fn, opts) {
   var onceFn = function (e) {
@@ -60,7 +58,7 @@ let tl = gsap.timeline({
     trigger: "#container",
     start: "top top",
     end: "bottom bottom",
-    scrub: true
+    scrub: true,
   }
 });
 
@@ -90,7 +88,7 @@ setTimeout(function () {
         });
 
         video.setAttribute("src", blobURL);
-        video.currentTime = t + 0.01;
+        video.currentTime = t + 0.001;
       });
   }
 }, 1000);
